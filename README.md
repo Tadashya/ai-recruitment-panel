@@ -13,14 +13,25 @@ pnpm dev
 
 The Figma Make workspace starts the Vite server automatically. Outside Make, open the URL Vite prints. The development API is mounted into Vite at `/api`.
 
-## Production
+## Production on Netlify
+
+This repository includes a Netlify Function adapter for the Express resume API.
+Connect the GitHub repository `Tadashya/ai-recruitment-panel` to Netlify and
+use the build settings from `netlify.toml` (build command `pnpm build`, publish
+directory `dist`). Netlify will install dependencies from `pnpm-lock.yaml` and
+deploy the API function alongside the static frontend. The function handles
+resume uploads in memory; the app does not save uploaded resumes.
+
+For a self-hosted Node deployment instead, use the instructions below.
+
+## Production on a Node host
 
 ```bash
 pnpm build
 PORT=3000 pnpm start
 ```
 
-`server.ts` serves both the built frontend and the API. Deploy this as a Node service (for example, Render, Railway, Fly.io, or a container host), not as a static-only site. Use Node 22+, run `pnpm install --frozen-lockfile && pnpm build`, and start with `pnpm start`. Put TLS and request-rate limiting at the hosting edge.
+`server.ts` serves both the built frontend and the API. Use Node 22+, run `pnpm install --frozen-lockfile && pnpm build`, and start with `pnpm start`. Put TLS and request-rate limiting at the hosting edge.
 
 ## API
 

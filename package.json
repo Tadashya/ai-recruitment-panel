@@ -18,7 +18,8 @@
     "pdf-parse": "^2.4.5",
     "pdfjs-dist": "^6.4.299",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "serverless-http": "^4.0.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
