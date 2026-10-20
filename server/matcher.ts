@@ -1,5 +1,6 @@
 import mammoth from "mammoth"
 import { DOMMatrix, ImageData, Path2D } from "@napi-rs/canvas"
+import { createRequire } from "node:module"
 export { matchResume } from "../shared/analyzer"
 
 export const MAX_FILE_SIZE = 5 * 1024 * 1024
@@ -28,6 +29,10 @@ export async function extractText(
     runtimeGlobals.ImageData ??= ImageData
     runtimeGlobals.Path2D ??= Path2D
     const { PDFParse } = await import("pdf-parse")
+    const require = createRequire(`${process.cwd()}/package.json`)
+    PDFParse.setWorker(
+      require.resolve("pdfjs-dist/legacy/build/pdf.worker.mjs"),
+    )
     const parser = new PDFParse({ data: new Uint8Array(buffer) })
     try {
       const result = await parser.getText()
