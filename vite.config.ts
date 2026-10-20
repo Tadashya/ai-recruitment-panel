@@ -2,9 +2,18 @@ import { defineConfig, type HtmlTagDescriptor, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
+import { existsSync, readFileSync } from 'node:fs'
 import { createApi } from './server/api'
 
-import siteConfiguration from './.figma/make/site.json'
+const siteConfigurationPath = path.resolve(process.cwd(), '.figma/make/site.json')
+const siteConfiguration = existsSync(siteConfigurationPath)
+  ? JSON.parse(readFileSync(siteConfigurationPath, 'utf8'))
+  : {
+      title: 'Pathfind — Resume role matching, explained',
+      description:
+        'Find relevant illustrative role matches with clear, privacy-conscious resume analysis.',
+      robots: { index: false },
+    }
 
 
 // Vite config — https://vitejs.dev/config/
