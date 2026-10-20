@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-canvas: #f8faf9;
+  --color-ink: #17211c;
+  --color-mint-50: #effbf5;
+  --color-mint-100: #d8f5e5;
+  --color-mint-200: #afe9cb;
+  --color-mint-300: #78d6a8;
+  --color-mint-500: #25a96d;
+  --color-mint-600: #158457;
+  --color-mint-700: #116b49;
+  --color-mint-800: #10553c;
+  --shadow-card: 0 28px 70px -30px rgba(23, 33, 28, 0.26);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-canvas);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 38rem;
+  height: 38rem;
+  top: -16rem;
+  left: -12rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(175, 233, 203, 0.42), transparent 68%);
+  pointer-events: none;
+}
+
+.score-ring {
+  background: conic-gradient(var(--color-mint-500) var(--score), #e9eeeb 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Pathfind — Resume role matching, explained",
+  "description": "Find relevant illustrative role matches with clear, privacy-conscious resume analysis.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
