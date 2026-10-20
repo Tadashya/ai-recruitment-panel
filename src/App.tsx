@@ -197,6 +197,7 @@ Education: Bachelor's degree in Computer Science.`
           50,
         )
       } else if (
+        request.status === 400 ||
         request.status === 404 ||
         request.status === 405 ||
         (request.status >= 200 &&
