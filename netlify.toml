@@ -8,11 +8,6 @@
   PNPM_VERSION = "10.34.3"
 
 [functions]
-  external_node_modules = [
-    "@napi-rs/canvas",
-    "@napi-rs/canvas-linux-x64-gnu",
-    "pdfjs-dist",
-  ]
   node_bundler = "esbuild"
 
 [[redirects]]

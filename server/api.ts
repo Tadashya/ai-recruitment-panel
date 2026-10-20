@@ -69,7 +69,6 @@ export function createApi() {
       const text = await extractText(request.file.buffer, mimeType)
       return response.json(matchResume(text, request.file.originalname))
     } catch (error) {
-      console.error("Resume processing failed", error)
       const message =
         error instanceof Error
           ? error.message

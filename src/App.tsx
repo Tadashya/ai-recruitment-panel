@@ -168,6 +168,10 @@ Education: Bachelor's degree in Computer Science.`
     setLoading(true)
     setError("")
     setProgress(1)
+    if (resume.name.toLowerCase().endsWith(".pdf")) {
+      analyzeInBrowser(resume)
+      return
+    }
     const form = new FormData()
     form.append("resume", resume)
     const request = new XMLHttpRequest()
