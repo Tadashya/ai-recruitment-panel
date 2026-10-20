@@ -1,5 +1,5 @@
 import mammoth from "mammoth"
-import { PDFParse } from "pdf-parse"
+import { DOMMatrix } from "@napi-rs/canvas"
 export { matchResume } from "../shared/analyzer"
 
 export const MAX_FILE_SIZE = 5 * 1024 * 1024
@@ -22,6 +22,9 @@ export async function extractText(
   }
 
   if (mimeType === "application/pdf") {
+    // pdfjs-dist expects DOMMatrix to exist at module load time in Node.
+    globalThis.DOMMatrix ??= DOMMatrix as unknown as typeof globalThis.DOMMatrix
+    const { PDFParse } = await import("pdf-parse")
     const parser = new PDFParse({ data: new Uint8Array(buffer) })
     try {
       const result = await parser.getText()

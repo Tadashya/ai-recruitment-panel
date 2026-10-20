@@ -8,6 +8,7 @@
   PNPM_VERSION = "10.34.3"
 
 [functions]
+  external_node_modules = ["@napi-rs/canvas"]
   node_bundler = "esbuild"
 
 [[redirects]]
