@@ -35,5 +35,8 @@
     "tsx": "^4.23.15",
     "typescript": "^5.7.0",
     "vite": "^8.0.5"
+  },
+  "optionalDependencies": {
+    "@napi-rs/canvas-linux-x64-gnu": "0.1.80"
   }
 }

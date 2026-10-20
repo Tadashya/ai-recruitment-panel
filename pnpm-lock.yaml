@@ -75,6 +75,10 @@ importers:
       vite:
         specifier: ^8.0.5
         version: 8.0.5(@types/node@22.19.17)(esbuild@0.28.2)(jiti@2.6.1)(tsx@4.23.15)
+    optionalDependencies:
+      '@napi-rs/canvas-linux-x64-gnu':
+        specifier: 0.1.80
+        version: 0.1.80
 
 packages:
 
