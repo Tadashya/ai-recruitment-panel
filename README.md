@@ -1,5 +1,7 @@
 # Pathfind
 
+[**Live demo**](https://profound-dragon-2595fa.netlify.app/)
+
 Pathfind is a privacy-conscious resume-to-role matching app. It extracts relevant resume text in memory, identifies skills, education keywords, and stated experience, then ranks clearly labeled illustrative roles with an explainable score.
 
 ## Run locally
